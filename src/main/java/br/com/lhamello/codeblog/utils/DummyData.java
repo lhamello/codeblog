@@ -20,7 +20,7 @@ public class DummyData {
     this.postRepository = postRepository;
   }
 
-  @PostConstruct
+//  @PostConstruct
   public void savePosts() {
     List<Post> posts = new LinkedList<>();
 
