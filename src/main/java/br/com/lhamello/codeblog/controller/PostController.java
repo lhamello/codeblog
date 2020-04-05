@@ -3,6 +3,7 @@ package br.com.lhamello.codeblog.controller;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,6 +25,14 @@ public class PostController {
     ModelAndView modelView = new ModelAndView("posts");
     List<Post> posts = postService.findAll();
     modelView.addObject("posts", posts);
+    return modelView;
+  }
+
+  @RequestMapping(value = "/posts/{id}", method = RequestMethod.GET)
+  public ModelAndView getPostDetails(@PathVariable("id") final long id) {
+    ModelAndView modelView = new ModelAndView("postDetails");
+    Post post = postService.findById(id);
+    modelView.addObject("post", post);
     return modelView;
   }
 }
