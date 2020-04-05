@@ -6,7 +6,7 @@ import br.com.lhamello.codeblog.model.Post;
 
 public interface PostService {
 
-  List<Post> finalAll();
+  List<Post> findAll();
 
   Post findById(final long id);
 
