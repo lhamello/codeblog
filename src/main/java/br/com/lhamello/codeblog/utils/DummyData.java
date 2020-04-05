@@ -4,8 +4,6 @@ import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-
 import org.springframework.stereotype.Component;
 
 import br.com.lhamello.codeblog.model.Post;
